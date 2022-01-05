@@ -2,16 +2,16 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.jsx', // 파일을 찾기 시작하는 입구에요.
+  entry: './src/index.tsx', // 파일을 찾기 시작하는 입구에요.
   mode: 'development',
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx','.ts','.tsx'],
     // import from 뒤에 확장자를 생략했을 때, 어떤 확장자가 올 수 있는지 알려줘요.
   },
   module: {
     rules: [
       {
-        test: /.(js|jsx)$/,
+        test: /.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: "babel-loader" // js와 jsx 파일을 가져오는 loader에요.
       },
